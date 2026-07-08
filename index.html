@@ -237,38 +237,35 @@
     </main>
 
    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 p-4">
-    
     <div onclick="closeModal()" class="cursor-pointer absolute inset-0 bg-black/80 hover:bg-black/90 transition-colors backdrop-blur-sm"></div>
+        <div id="modal-content" class="relative z-10 bg-panelbg border border-teto w-full max-w-4xl p-6 rounded shadow-[0_0_30px_rgba(255,42,109,0.15)] transform scale-95 transition-transform duration-300 flex flex-col max-h-[90vh]">
+            <div class="flex justify-between items-center mb-4 border-b border-tetoBorder pb-3 shrink-0">
+                <h3 id="modal-title" class="text-2xl font-bold text-teto">Szczegóły Projektu</h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-teto font-bold text-3xl transition-colors leading-none">
+                    &times;
+                </button>
+            </div>
 
-    <div id="modal-content" class="relative z-10 bg-panelbg border border-teto w-full max-w-7xl p-6 rounded shadow-[0_0_30px_rgba(255,42,109,0.15)] transform scale-95 transition-transform duration-300 flex flex-col max-h-[90vh]">
+        <div class="relative flex-grow flex flex-col min-h-0 mt-2">
+            <div id="modal-scroll-area" class="overflow-y-auto custom-scrollbar pr-3 flex-grow flex flex-col gap-6 pb-8" onscroll="checkScroll()">
+                <div class="w-full flex items-center justify-center bg-[#120a0d] rounded border border-tetoBorder p-2 shadow-lg">
+                    <img id="modal-image" src="" alt="Project Image" class="max-h-[50vh] w-auto object-contain rounded">
+                </div>
         
-        <div class="flex justify-between items-center mb-6 border-b border-tetoBorder pb-2 shrink-0">
-            <h3 id="modal-title" class="text-2xl font-bold text-teto">Szczegóły Projektu</h3>
-            <button onclick="closeModal()" class="text-gray-400 hover:text-teto font-bold text-2xl transition-colors leading-none">
-                &times;
-            </button>
+                <div id="modal-desc" class="text-gray-300 leading-relaxed text-justify">
+                </div>
         </div>
 
-        <div class="flex flex-col md:flex-row gap-8 overflow-hidden">
-            
-            <div class="md:w-1/2 flex items-center justify-center">
-    <div class="bg-[#120a0d] rounded border border-tetoBorder p-2 w-fit h-fit shadow-lg">
-        <img id="modal-image" src="" alt="Project Image" class="max-h-[60vh] md:max-h-[75vh] w-auto object-contain rounded">
+        <div id="scroll-fade" class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-panelbg to-transparent flex items-end justify-end pb-2 pr-8 pointer-events-none transition-opacity duration-500">
+            <span class="text-teto text-xs font-mono tracking-widest">
+                [ Zobacz więcej v ]<span class="animate-pulse">_</span>
+            </span>
+        </div>
     </div>
-</div>
-            
-            <div class="md:w-1/2 flex flex-col h-full">
-                
-                <div id="modal-desc" class="text-gray-300 leading-relaxed overflow-y-auto pr-4 custom-scrollbar flex-grow text-sm">
-                </div>
-                
-                <div class="pt-6 mt-auto shrink-0">
-                    <a id="modal-link" href="#" target="_blank" class="block text-center border border-teto text-teto px-4 py-3 hover:bg-teto hover:text-white transition-colors font-bold uppercase tracking-wider rounded">
-                        > Zobacz kod na GitHubie
-                    </a>
-                </div>
-
-            </div>
+        <div class="pt-4 mt-2 border-t border-tetoBorder shrink-0">
+            <a id="modal-link" href="#" target="_blank" class="block w-full text-center border border-teto text-teto px-4 py-3 hover:bg-teto hover:text-white transition-colors font-bold uppercase tracking-wider rounded">
+                > Zobacz kod na GitHubie
+            </a>
         </div>
     </div>
 </div>
@@ -280,6 +277,9 @@
         const descDest = document.getElementById('modal-desc');
         const linkDest = document.getElementById('modal-link');
         const imageDest = document.getElementById('modal-image');
+
+        const modalScrollArea = document.getElementById('modal-scroll-area');
+        const scrollFade = document.getElementById('scroll-fade');
 
         function openModal(selectedProject) {
             const projectTitle = selectedProject.getAttribute('data-title');
@@ -312,6 +312,11 @@
 
             modalWindow.classList.remove('scale-95');
             modalWindow.classList.add('scale-100');
+
+            modalScrollArea.scrollTop = 0;
+            setTimeout(() => {
+                checkScroll();
+            }, 10);
         }
         function closeModal() {
             modalWrapper.classList.remove('opacity-100', 'pointer-events-auto');
@@ -319,6 +324,13 @@
             
             modalWindow.classList.remove('scale-100');
             modalWindow.classList.add('scale-95');
+        }
+        function checkScroll() {
+            if (modalScrollArea.scrollTop + modalScrollArea.clientHeight >= modalScrollArea.scrollHeight - 5) {
+                scrollFade.classList.add('opacity-0');
+            } else {
+                scrollFade.classList.remove('opacity-0');
+            }
         }
 
         document.addEventListener('keydown', function(event) {
