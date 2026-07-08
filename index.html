@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>theyurii.xyz | TheYurii's site</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <script src="tailwind.js"></script> -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        cyber: '#00ff00',
-                        darkbg: '#0a0a0a',
+                        teto: '#ff2a6d',
+                        tetoHover: '#d11a52',
+                        darkbg: '#0f0a0c',
+                        panelbg: '#171013',
+                        tetoBorder: '#361824'
                     }
                 }
             }
@@ -20,176 +22,256 @@
     </script>
     <style>
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #00ff00; }
+        ::-webkit-scrollbar-track { background: #0f0a0c; }
+        ::-webkit-scrollbar-thumb { background: #ff2a6d; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #d11a52; }
+        
+        .bg-teto-grid {
+            background-size: 30px 30px;
+            background-image: linear-gradient(to right, rgba(255, 42, 109, 0.04) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 42, 109, 0.04) 1px, transparent 1px);
+        }
     </style>
 </head>
-<body class="bg-darkbg text-gray-300 font-mono antialiased min-h-screen flex flex-col">
+<body class="bg-darkbg bg-teto-grid text-gray-300 font-mono antialiased min-h-screen flex flex-col">
 
-    <header class="border-b border-gray-800 p-6">
+    <header class="border-b border-tetoBorder p-6 bg-darkbg/90 backdrop-blur sticky top-0 z-40">
         <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-cyber tracking-widest">
-                > theyurii<span class="animate-pulse">_</span>
+            <h1 class="text-2xl font-bold text-teto tracking-widest flex items-start">
+                > theyurii
+                <span class="text-[10px] ml-1 text-teto/70 mt-1">[0401]</span>
+                <span class="animate-pulse">_</span>
             </h1>
             <nav class="hidden md:flex space-x-6">
-                <a href="#about" class="hover:text-cyber transition-colors">[ O mnie ]</a>
-                <a href="#projects" class="hover:text-cyber transition-colors">[ Projekty ]</a>
-                <a href="#contact" class="hover:text-cyber transition-colors">[ Kontakt ]</a>
+                <a href="#about" class="hover:text-teto transition-colors">[ O mnie ]</a>
+                <a href="#projects" class="hover:text-teto transition-colors">[ Projekty ]</a>
+                <a href="#contact" class="hover:text-teto transition-colors">[ Kontakt ]</a>
             </nav>
         </div>
     </header>
 
     <main class="flex-grow max-w-5xl mx-auto p-6 w-full">
         <section id="about" class="py-12 md:py-20">
-            <p class="text-cyber mb-2">root@theyurii:~$ whoami</p>
-            <h2 class="text-4xl md:text-4xl font-bold text-white mb-6">Pasjonat techonologii i informatyki</h2>
-            <p class="text-lg text-gray-400 max-w-2xl leading-relaxed">
-                Aktualnie jestem studentem drugiego roku informatyki na Politechnice Śląskiej. Informatyka i technologia od zawsze była dużą częścią mojego życia. Od kiedy pamiętam stawiałem serwery, konfigurowałem komputery i uczyłem się programowania. Na studiach zdobyłem kompleksową wiedze z dziedziny działania sieci komputerowych, obsługi systemów operacyjnych i programowania obiektowego.
+            <p class="text-teto mb-2">root@theyurii:~$ whoami</p>
+            <h2 class="text-4xl font-bold text-white mb-6">Przyszły inżynier, hobbystyczny programista i twórca </h2>
+            <p class="text-lg text-gray-400 max-w-3xl leading-relaxed">
+                Aktualnie studiuję informatykę na trzecim roku Politechniki Śląskiej. Od kiedy pamiętam grzebałem w sprzęcie - stawiałem serwery, konfigurowałem homelaby i pisałem kod. Na uczelni zgłębiłem działanie sieci, systemów operacyjnych i programowania obiektowego.
                 <br><br>
-                Zamierzam dalej rozwijać się w kierunku
-                <p class="font-bold text-2xl">
-                cyberbezpieczeństwa. 
-                </p>
+                W tym roku rozpocząłem specjalizację <span class="font-bold text-teto text-xl">cyberbezpieczeństwo</span>. 
+            </p>
         </section>
 
-        <section id="projects" class="py-12 border-t border-gray-800">
-            <p class="text-cyber inline">root@theyurii:~$ ls -la ./projects <p class="text-gray-500 inline"># Kliknij na projekt aby poznać szczegóły</p></p>
-
+        <section id="projects" class="py-12 border-t border-tetoBorder">
+            <p class="text-teto inline">root@theyurii:~$ ls -la ./projects</p>
+            <p class="text-gray-500 inline text-sm ml-2"># Kliknij w projekt, żeby zobaczyć szczegóły projektu.</p>
             <p class="mb-6"></p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <div onclick="openModal(this)"
-                     class="cursor-pointer bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group"
+                     class="cursor-pointer bg-panelbg border border-tetoBorder p-6 rounded hover:border-teto transition-colors group shadow-lg"
                      data-title="Portal Gun - Projekt łączący hardware i druk 3d."
-                     data-desc="Dluzszy opis"
+                     data-desc="Portal Gun to projekt łączący druk 3D, elektronikę i programowanie. Jest to replika urządzenia z gry Portal, która posiada oświetlenie i wydaje dźwięki.
+                                <br><br>
+                                Inspiracją do stworzenia tego projektu był <a href='https://www.youtube.com/watch?v=6XYGeeG00aM' target='_blank' class='text-teto underline hover:text-white transition-colors cursor-pointer'>film autorstwa BigRig Creates</a>, który pokazał, ze stworzenie czegoś takiego nie jest wcale takie skomplikowane. <a href='https://www.thingiverse.com/thing:3579224' target='_blank' class='text-teto underline hover:text-white transition-colors cursor-pointer'>Modele 3D są autorstwa EVARATE</a>, a oryginalne <a href='https://github.com/Lunchbox7985/Portal-Gun' target='_blank' class='text-teto underline hover:text-white transition-colors cursor-pointer'>schematy elektroniczne są autorstwa Lunchbox7985</a>. W projekcie zostały wprowadzone pewne modyfikacje, aby wykorzystać dostępne u nas komponenty, całość była bardziej przystępna do złożenia i użytkowania.
+                                <br><br>
+                                W środku całością zarządza mikrokontroler Arduino Nano, który steruje diodami LED WS2812B i reaguje na przyciski. Dźwiękiem zarządza Adafruit Audio FX Mini Sound Board. Całość jest zasilana z standardowego powerbanka. Dodatkowo w projekcie zastosowano wzmacniacz audio PAM8403, który pozwala na odtwarzanie dźwięków z głośnika 3W.
+                                <br><br>
+                                Obudowa została wydrukowana na drukarce 3D z filamentów PLA. W projekcie równie zastosowano przezroczyste akrylowe elementy, które odwzierciedlają realny wygląd Portal Gun'a. Całość jest złożona w taki sposób, aby można było łatwo ładować powerbanka i modyfikować projekt w przyszłości.
+                                <p class='text-gray-400 text-sm mt-2'>Projekt powstał w 2025 roku i był prezentowany na konwencie Pyrkon 2026.</p>
+                                "
                      data-link="hidden"
-                     data-image="/img/PortalGun.jpg">
-                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">Portal Gun</h3>
+                     data-image="/img/PortalGun.webp">
+                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-teto transition-colors">Portal Gun</h3>
                     <div class="flex space-x-2 mb-4">
-                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">3D Printing</span>
-                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Hardware</span>
+                        <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">3D Printing</span>
+                        <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">Hardware</span>
                     </div>
                     <p class="text-sm text-gray-400">Portal Gun realnej wielkości, posiadający oświetlenie i wydający dźwięki. Stworzony z myślą o cosplayu na prezent.</p>
                 </div>
 
                 <div onclick="openModal(this)"
-                     class="cursor-pointer bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group"
+                     class="cursor-pointer bg-panelbg border border-tetoBorder p-6 rounded hover:border-teto transition-colors group shadow-lg"
                      data-title="SolarDash - Ekran z statystkiami instalacji fotowoltaicznej"
-                     data-desc="Dluzszy opis"
+                     data-desc="SolarDash to autorskie urządzenie z ekranem E-Papier od Waveshare, pełniące rolę domowego centrum monitoringu instalacji fotowoltaicznej. Urządzenie łączy się z API producenta inwertera (obecnie zintegrowane z systemem Foxess), pobierając na żywo dane o aktualnej produkcji energii, zużyciu oraz stanie naładowana magazynu energii. Dzięki zastosowaniu ekranu E-Papier, urządzenie jest energooszczędne i może działać nieprzerwanie na baterii przez długi czas.
+                                <br><br>
+                                Projekt został stworzony w języku Python i wykorzystuje bibliotekę foxesscloud oraz epd-library. Urządzenie jest zbudowane na bazie Raspberry Pi, które komunikuje się z wyświetlaczem E-Papier za pomocą interfejsu SPI. Całość została zamknięta w specjalnie zaprojektowanej, wydrukowanej w 3D obudowie, która chroni elektronikę i nadaje urządzeniu gotowy, produktowy wygląd.
+                                <br><br>
+                                Głównym celem powstania SolarDash w 2024 roku była optymalizacja kosztów domowych. Dzięki stałemu dostępowi do bieżącej telemetrii, domownicy mogą w pełni świadomie planować zużycie prądu (np. uruchamiając pralkę czy zmywarkę w szczycie produkcji słonecznej), co bezpośrednio przekłada się na niższe rachunki za energię."
                      data-link="hidden"
-                     data-image="/img/solardash.jpg">
-                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">SolarDash</h3>
+                     data-image="/img/solardash.webp">
+                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-teto transition-colors">SolarDash</h3>
                     <div class="flex space-x-2 mb-4">
-                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">IoT</span>
-                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Python</span>
+                        <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">IoT</span>
+                        <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">Python</span>
                     </div>
                     <p class="text-sm text-gray-400">Urządzenie z ekranem E-Papier wyświetlające dane o stanie instalacji fotowoltaicznej.</p>
                 </div>
 
-                <div class="bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group">
-                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">tu nazwa</h3>
+                <div onclick="openModal(this)"
+                     class="cursor-pointer bg-panelbg border border-tetoBorder p-6 rounded hover:border-teto transition-colors group shadow-lg"
+                     data-title="LED DDP AUDIO"
+                     data-desc="
+                     LED DDP Audio Controller to autorska aplikacja desktopowa, która zamienia taśmy LED RGB (lub inne światło RGB) w precyzyjny, reagujący na muzykę system oświetlenia o niskim opóźnieniu. Program przechwytuje dźwięk systemowy na żywo i steruje oświetleniem, komunikując się bezpośrednio z mikrokontrolerami (kompatybilnymi m.in. z oprogramowaniem WLED lub OpenBeken) za pomocą szybkiego protokołu DDP opartego na pakietach UDP.
+                     <br><br>
+                     Od strony technicznej projekt został w całości napisany w języku C# (z interfejsem graficznym w technologii WPF) i działa w oparciu o najnowsze środowisko .NET 10. Całość została napisana z zachowaniem architektury MVVM. Sercem aplikacji jest silnik analizy dźwięku. Dzięki wykorzystaniu pętli zwrotnej WASAPI oraz szybkiej transformaty Fouriera (FFT), program analizuje częstotliwości w czasie rzeczywistym, precyzyjnie oddzielając głębokie uderzenia basu od wysokich dźwięków. Całość wspierana jest przez algorytm wygaszania decay, który gwarantuje idealną płynność kinetyki światła.
+                     <br><br>
+                     Aplikacja powstała w odpowiedzi na ograniczenia i opóźnienia istniejących rozwiązań open-source. Zamiast losowego mrugania reagującego jedynie na ogólną głośność, program oferuje w pełni zsynchronizowane, płynne doświadczenie wizualne. Dzięki czytelnemu interfejsowi użytkownik zyskuje pełną kontrolę nad telemetrią na żywo, routingiem audio oraz indywidualną czułością każdego pasma częstotliwości."
+                     data-link="https://github.com/zheYurii/LED_DDP_AUDIO/"
+                     data-image="/img/led_ddp.webp">
+                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-teto transition-colors">LED DDP AUDIO</h3>
                     <div class="flex space-x-2 mb-4">
-                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded"></span>
-                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded"></span>
+                        <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">WPF</span>
+                        <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">C#</span>
                     </div>
-                    <p class="text-sm text-gray-400">cos</p>
+                    <p class="text-sm text-gray-400">Aplikacja do sterowania diodami LED z wykorzystaniem protokołu DDP na podstawie aktywnego źródła dźwięku.</p>
                 </div>
 
             </div>
         </section>
 
-        <section id="university" class="py-12 border-t border-gray-800">
-            <p class="text-cyber mb-6">root@theyurii:~$ ls -la ./university</p>
+        <section id="university" class="py-12 border-t border-tetoBorder">
+            <p class="text-teto mb-6">root@theyurii:~$ tree ./university</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <div onclick="openModal(this)" 
-                     class="cursor-pointer bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group"
+                     class="cursor-pointer bg-panelbg border border-tetoBorder p-6 rounded hover:border-teto transition-colors group shadow-lg"
                      data-title="Konsolowa gra Bingo w C++"
-                     data-desc="Dluzszy opis"
+                     data-desc="Projekt to implementacja znanej na całym świecie gry Bingo, napisanej w języku C++. Aplikacja umożliwia losowanie liczb zgodnie z zasadami Bingo, generowanie kart dla graczy oraz sprawdzanie wyników. Program wykorzystuje mechanizmy losowości, tablice do przechowywania siatek Bingo oraz podstawowe operacje wejścia/wyjścia do interakcji z użytkownikiem.
+                     <br><br>
+                     Program zapewnia wszystko co jest potrzebne do rozegrania gry. Użytkownik nie potrzebuje żadnych dodatkowych przedmiotów/programów, aby rozegrać grę przeciwko botom.
+                     <br><br>
+                     Kod jest napisany w sposób modułowy, co pozwala na jego łatwą rozbudowę, np. o tryb wieloosobowy czy dodatkowe warianty gry. Rozgrywka nie ogranicza się jedynie do gry samemu. Dzięki zastosowanemu systemowi losowania liczb według seed'a, możliwe jest granie w trybie pseudowieloosobowym."
                      data-link="https://github.com/thematiig17/bingo-game-cpp"
-                     data-image="/img/bingogame.jpg">
+                     data-image="/img/bingogame.webp">
 
-                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">Gra Bingo <p class="text-gray-500">Semestr 1</p></h3>
+                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-teto transition-colors">Gra Bingo <span class="text-teto/50 text-sm ml-2">Semestr 1</span></h3>
                     <div class="flex space-x-2 mb-4">
-                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">C++</span>
-                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Gaming</span>
+                        <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">C++</span>
+                        <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">Gaming</span>
                     </div>
                     <p class="text-sm text-gray-400">Gra konsolowa losuje liczby zgodnie z zasadami Bingo, generuje karty dla graczy oraz sprawdza wyniki.</p>
                 </div>
 
                 <div onclick="openModal(this)"
-                     class="cursor-pointer bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group"
+                     class="cursor-pointer bg-panelbg border border-tetoBorder p-6 rounded hover:border-teto transition-colors group shadow-lg"
                      data-title="Aplikacja do zarządzania lodówką i przepisami kulinarnymi"
-                     data-desc="Dluzszy opis"
+                     data-desc="
+                     WeNeedToCook to aplikacja mobilna ułatwiająca codzienną organizację pracy w kuchni poprzez zarządzanie domową lodówką, listą zakupów oraz przepisami kulinarnymi. Projekt powstał w ramach pracy zespołowej jako zaliczenie z przedmiotu Programowanie II na kierunku Informatyka Politechniki Śląskiej. Aplikacja stanowi bezpośrednią odpowiedź na powszechny problem braku kontroli nad domowymi zapasami, co w tradycyjnym, ręcznym modelu zarządzania często prowadzi do marnowania żywności, dublowania zakupów lub braku kluczowych składników podczas gotowania.
+                     <br><br>
+                     Od strony technicznej projekt został zaimplementowany przy użyciu dwóch głównych technologii: język C++ odpowiada za obsługę logiki biznesowej, pełną synchronizację danych oraz ich bezpieczny zapis do pliku, natomiast nowoczesny interfejs użytkownika zbudowano z wykorzystaniem języka QML. W aplikacji wdrożono również system walidacji danych wejściowych, który uniemożliwia wprowadzenie niepożądanych komend lub kodu poprzez nazwy produktów.
+                     <br><br>
+                     Główną siłą narzędzia jest pełna automatyzacja i współpraca trzech podstawowych modułów, które wyręczają użytkownika w planowaniu posiłków:
+                     <ul class='list-disc pl-5 mt-2 space-y-2 text-gray-400'>
+                        <li><strong class='text-gray-300'>Zarządzanie zapasami:</strong> Użytkownik ma ciągły podgląd na zawartość lodówki oraz listę zakupów, z której naciśnięcie jednego przycisku automatycznie przenosi kupione produkty bezpośrednio na stan lodówki.</li>
+                        <li><strong class='text-gray-300'>Baza przepisów:</strong> Możliwość tworzenia własnych receptur z precyzyjnym podziałem na składniki, uwzględniającym ich ilość oraz jednostki miary (g, ml, sztuki).</li>
+                        <li><strong class='text-gray-300'>Inteligentne gotowanie:</strong> Funkcja 'Use ingredients' automatycznie odejmuje zużyte podczas gotowania składniki ze stanu lodówki. Z kolei w przypadku braków, funkcja 'Add missing' błyskawicznie uzupełnia listę zakupów o niezbędne pozycje.</li>
+                     </ul>
+                     "
                      data-link="https://github.com/thematiig17/WeNeedToCook-mobile"
-                     data-image="/img/weneedtocook.jpg">
-                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">Aplikacja WeNeedToCook <p class="text-gray-500">Semestr 2</p></h3>
+                     data-image="/img/weneedtocook.webp">
+                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-teto transition-colors">WeNeedToCook <span class="text-teto/50 text-sm ml-2">Semestr 2</span></h3>
                     <div class="flex space-x-2 mb-4">
-                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">C++</span>
-                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">QML</span>
-                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Mobile</span>
+                        <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">C++</span>
+                        <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">QML</span>
+                        <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">Mobile</span>
                     </div>
-                    <p class="text-sm text-gray-400">Celem projektu było stworzenie mobilnej aplikacji do zarządzania domową lodówką, przepisami kulinarnymi oraz listą zakupów.</p>
+                    <p class="text-sm text-gray-400">Mobilna aplikacja do zarządzania domową lodówką, przepisami kulinarnymi oraz listą zakupów.</p>
                 </div>
 
                 <div onclick="openModal(this)"
-                     class="cursor-pointer bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group"
+                     class="cursor-pointer bg-panelbg border border-tetoBorder p-6 rounded hover:border-teto transition-colors group shadow-lg"
                      data-title="SealParadise - modyfikacja do Minecrafta"
-                     data-desc="Dluzszy opis"
+                     data-desc="
+                     Seal Paradise to autorska modyfikacja do gry Minecraft (wersja 1.21), zrealizowana jako projekt zaliczeniowy z przedmiotu Programowanie III na Politechnice Śląskiej. Głównym celem modyfikacji jest rozszerzenie świata gry o nowy, tematyczny wymiar (Seal World) oraz wprowadzenie unikalnej fauny w postaci czterech gatunków fok (Niko, Yo, Mizore, Kyoro). Modyfikacja została zaprojektowana w taki sposób, aby płynnie integrowała się z podstawową mechaniką gry - przejście do nowego świata wymaga od gracza zaangażowania, dzięki czemu nie zostaje utracony element eksploracyjny gry.
+                     <br><br>
+                     Od strony technicznej projekt został w całości napisany w języku Java 21, w oparciu o popularne środowisko Fabric Loader oraz system budowania Gradle, wykorzystujący plugin Fabric Loom. W kodzie zaimplementowano nowoczesne techniki inżynierii modów, takie jak system Data Generation, który pozwala na automatyczne generowanie plików zasobów (JSON) podczas kompilacji, znacząco redukując ryzyko błędów. Ponadto wykorzystano mechanizm Mixin do bezpośredniej modyfikacji kodu źródłowego silnika gry, co posłużyło m.in. do zablokowania mechaniki zamarzania wody w nowym, zimowym wymiarze poprzez ingerencję w metodę canSetIce w klasie Biome.
+                     <br><br>
+                     Sercem projektu i jego najważniejszą mechaniką jest stworzenie zaawansowanego systemu sztucznej inteligencji dla mobów o charakterze amfibicznym. Zaimplementowane foki potrafią dynamicznie rozpoznawać środowisko i przełączać się między trybem nawigacji lądowej (uwzględniającym standardową grawitację) a wodnej (pozwalającym na swobodne poruszanie się w 3D z wyłączonym systemem tonięcia). Modyfikacja wprowadza również własny ekosystem, w tym niestandardowy generator świata, unikalny biom, nowy portal oraz tematyczne bloki powiązane z nowym środowiskiem."
                      data-link="https://github.com/thematiig17/seal-paradise"
-                     data-image="/img/sealparadise.jpg">
+                     data-image="/img/sealparadise.webp">
 
-                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">SealParadise <p class="text-gray-500">Semestr 3</p></h3>
+                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-teto transition-colors">SealParadise<span class="text-teto/50 text-sm ml-2">Semestr 3</span></h3>
                     <div class="flex space-x-2 mb-4">
-                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Java</span>
-                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Minecraft</span>
+                        <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">Java</span>
+                        <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">Minecraft</span>
                     </div>
                     <p class="text-sm text-gray-400">Modyfikacja do gry Minecraft dodająca 4 foki i foczy wymiar. Napisana za pomocą modloadera Fabric.</p>
+                </div>
+                
+                <div onclick="openModal(this)"
+                     class="cursor-pointer bg-panelbg border border-tetoBorder p-6 rounded hover:border-teto transition-colors group shadow-lg"
+                     data-title="Kasannik - planer studenta"
+                     data-desc="
+                     Kasannik to system webowy dedykowany studentom, służący do integracji rozproszonych informacji akademickich (plan zajęć, terminy zaliczeń, baza kontaktowa prowadzących oraz listy zadań). Głównym celem było stworzenie czytelnego dashboardu, który na podstawie bieżącej daty automatycznie kategoryzuje priorytety użytkownika i odciąża go z pamiętania o deadlinach.
+                     <br><br>
+                     Technologie i podejście inżynierskie:
+                     <ul class='list-disc pl-5 mt-2 space-y-2 text-gray-400'>
+                        <li><strong class='text-gray-300'>Architektura:</strong> Własna implementacja wzorca MVC (Model-View-Controller) oraz autorski router obsługujący dynamiczne parametry w URL (np. ID semestru).</li>
+                        <li><strong class='text-gray-300'>Backend:</strong> PHP 8.5 + MariaDB. Komunikacja z bazą oparta o obiekt PDO i sparametryzowane zapytania (zabezpieczenie przed SQL Injection).</li>
+                        <li><strong class='text-gray-300'>Frontend:</strong> Czysty interfejs (UI) zbudowany bez ciężkich frameworków – wyłącznie HTML5, CSS i responsywny Vanilla JavaScript.</li>
+                        <li><strong class='text-gray-300'>Wydajność i Bezpieczeństwo:</strong> Zastosowanie klauzul LIMIT i mechanizmów cache'owania widoków w celu minimalizacji obciążenia bazy danych. System wyposażony w kryptograficzne haszowanie haseł, autoryzację sesyjną, tokeny CSRF chroniące formularze oraz restrykcyjną weryfikację rozszerzeń przy wgrywaniu plików użytkownika.</li>
+                     </ul>"
+                     data-link="https://github.com/tortzs/kasannik"
+                     data-image="/img/kasannik.webp">
+
+                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-teto transition-colors">Kasannik <span class="text-teto/50 text-sm ml-2">Semestr 4</span></h3>
+                    <div class="flex space-x-2 mb-4">
+                        <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">PHP</span>
+                        <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">Web</span>
+                    </div>
+                    <p class="text-sm text-gray-400">Kompleksowa aplikacja webowa dla studentów do organizacji zajęć i planowania nauki.</p>
                 </div>
 
             </div>
         </section>
 
-        <section id="contact" class="py-12 border-t border-gray-800">
-            <p class="text-cyber mb-4">root@theyurii:~$ cat ./contact.txt</p>
-            <div class="bg-gray-900 border border-gray-800 p-6 rounded inline-block">
-                <p class="text-gray-300">Email: <a href="mailto:kontakt@theyurii.xyz" class="text-cyber hover:underline">kontakt@theyurii.xyz</a></p>
-                <p class="text-gray-300">GitHub: <a href="http://www.github.com/thematiig17" class="text-cyber hover:underline">github.com/thematiig17</a></p>
+        <section id="contact" class="py-12 border-t border-tetoBorder">
+            <p class="text-teto mb-4">root@theyurii:~$ cat ./contact.txt</p>
+            <div class="bg-panelbg border border-tetoBorder p-6 rounded inline-block shadow-lg">
+                <p class="text-gray-300 mb-2">Email: <a href="mailto:hatsune@theyurii.xyz" class="text-teto hover:text-tetoHover hover:underline transition-colors">hatsune@theyurii.xyz</a></p>
+                <p class="text-gray-300">GitHub: <a href="http://www.github.com/zheYurii" class="text-teto hover:text-tetoHover hover:underline transition-colors">github.com/zheYurii</a></p>
             </div>
         </section>
     </main>
 
-    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+   <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 p-4">
     
-        <div onclick="closeModal()" class="cursor-pointer absolute inset-0 bg-black/80 hover:bg-black/85 transition-colors"></div>
+    <div onclick="closeModal()" class="cursor-pointer absolute inset-0 bg-black/80 hover:bg-black/90 transition-colors backdrop-blur-sm"></div>
 
-            <div id="modal-content" class="relative z-10 bg-gray-900 border border-cyber w-full max-w-2xl p-6 rounded shadow-2xl transform scale-95 transition-transform duration-300">
+    <div id="modal-content" class="relative z-10 bg-panelbg border border-teto w-full max-w-7xl p-6 rounded shadow-[0_0_30px_rgba(255,42,109,0.15)] transform scale-95 transition-transform duration-300 flex flex-col max-h-[90vh]">
+        
+        <div class="flex justify-between items-center mb-6 border-b border-tetoBorder pb-2 shrink-0">
+            <h3 id="modal-title" class="text-2xl font-bold text-teto">Szczegóły Projektu</h3>
+            <button onclick="closeModal()" class="text-gray-400 hover:text-teto font-bold text-2xl transition-colors leading-none">
+                &times;
+            </button>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8 overflow-hidden">
+            
+            <div class="md:w-1/2 flex items-center justify-center">
+    <div class="bg-[#120a0d] rounded border border-tetoBorder p-2 w-fit h-fit shadow-lg">
+        <img id="modal-image" src="" alt="Project Image" class="max-h-[60vh] md:max-h-[75vh] w-auto object-contain rounded">
+    </div>
+</div>
+            
+            <div class="md:w-1/2 flex flex-col h-full">
                 
-                <div class="flex justify-between items-center mb-4 border-b border-gray-800 pb-2">
-                    <h3 id="modal-title" class="text-2xl font-bold text-cyber">Szczegóły Projektu</h3>
-                    <button onclick="closeModal()" class="text-gray-400 hover:text-red-500 font-bold text-xl">
-                        [X]
-                    </button>
+                <div id="modal-desc" class="text-gray-300 leading-relaxed overflow-y-auto pr-4 custom-scrollbar flex-grow text-sm">
+                </div>
+                
+                <div class="pt-6 mt-auto shrink-0">
+                    <a id="modal-link" href="#" target="_blank" class="block text-center border border-teto text-teto px-4 py-3 hover:bg-teto hover:text-white transition-colors font-bold uppercase tracking-wider rounded">
+                        > Zobacz kod na GitHubie
+                    </a>
                 </div>
 
-                <div class="space-y-4">
-                    <div class="bg-gray-800 h-70 rounded flex items-center justify-center text-gray-500 border border-gray-700">
-                        <img id="modal-image" src="" alt="Project Image" class="max-h-full max-w-full object-contain">
-                    </div>
-                    
-                    <p id="modal-desc" class="text-gray-300 leading-relaxed">
-                    </p>
-                    
-                    <div class="pt-4">
-                        <a id="modal-link" href="#" target="_blank" class="inline-block border border-cyber text-cyber px-4 py-2 hover:bg-cyber hover:text-black transition-colors">
-                            > Zobacz kod na GitHubie
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
+    </div>
+</div>
     <script>
         const modalWrapper = document.getElementById('project-modal');
         const modalWindow = document.getElementById('modal-content');
@@ -206,18 +288,21 @@
             const projectImage = selectedProject.getAttribute('data-image');
 
             titleDest.textContent = projectTitle;
-            descDest.textContent = projectDesc;
+            descDest.innerHTML = projectDesc;
 
             if(projectLink == "hidden") {
-                linkDest.textContent = "Brak kodu na GitHub.";
-                linkDest.classList.remove('hover:bg-cyber', 'hover:text-black')
-                linkDest.href = "";
-                
+                linkDest.textContent = "Brak kodu na GitHub";
+                linkDest.classList.remove('hover:bg-teto', 'hover:text-white')
+                linkDest.classList.add('opacity-50', 'cursor-not-allowed')
+                linkDest.href = "javascript:void(0)";
+                linkDest.removeAttribute('target');
             }
             else {
                 linkDest.textContent = "> Zobacz kod na GitHubie";
                 linkDest.href = projectLink;
-                linkDest.classList.add('hover:bg-cyber', 'hover:text-black')
+                linkDest.setAttribute('target', '_blank');
+                linkDest.classList.add('hover:bg-teto', 'hover:text-white')
+                linkDest.classList.remove('opacity-50', 'cursor-not-allowed')
             }
             
             imageDest.src = projectImage;
@@ -234,20 +319,19 @@
             
             modalWindow.classList.remove('scale-100');
             modalWindow.classList.add('scale-95');
-    }
-
-    //Zamkniecie okna po wcisnieciu ESC.
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            if (!modalWrapper.classList.contains('opacity-0')) {
-                closeModal();
-            }
         }
-    });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                if (!modalWrapper.classList.contains('opacity-0')) {
+                    closeModal();
+                }
+            }
+        });
     </script>
 
-    <footer class="border-t border-gray-800 p-6 text-center text-gray-600 text-sm">
-        <p>TheYurii 2026</p>
+    <footer class="border-t border-tetoBorder p-6 mt-12 text-center text-gray-600 text-sm">
+        <p>TheYurii 2026</p> <p class="text-gray-500 text-xs">Wielbmy Teto i jedzmy bagietki 🥖.</p>
     </footer>
 
 </body>
