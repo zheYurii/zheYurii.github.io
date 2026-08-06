@@ -242,7 +242,7 @@
         <div class="relative flex-grow flex flex-col min-h-0 mt-2">
             <div id="modal-scroll-area" class="overflow-y-auto custom-scrollbar pr-3 flex-grow flex flex-col gap-6 pb-8" onscroll="checkScroll()">
                 <div class="w-full flex items-center justify-center bg-[#120a0d] rounded border border-tetoBorder p-2 shadow-lg">
-                    <img id="modal-image" src="" alt="Project Image" class="max-h-[50vh] w-auto object-contain rounded">
+                    <img id="modal-image" src="" alt="Project Image" class="max-h-[50vh] w-auto object-cover rounded opacity-0 transition-opacity duration-300 ease-in-out">
                 </div>
         
                 <div id="modal-desc" class="text-gray-300 leading-relaxed text-justify">
@@ -270,6 +270,7 @@
         const descDest = document.getElementById('modal-desc');
         const linkDest = document.getElementById('modal-link');
         const imageDest = document.getElementById('modal-image');
+        const modalImageContainer = document.getElementById('modalImageContainer');
 
         const modalScrollArea = document.getElementById('modal-scroll-area');
         const scrollFade = document.getElementById('scroll-fade');
@@ -282,6 +283,11 @@
 
             titleDest.textContent = projectTitle;
             descDest.innerHTML = projectDesc;
+
+            imageDest.classList.remove('opacity-100');
+            imageDest.classList.add('opacity-0');
+
+            imageDest.src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 
             if(projectLink == "hidden") {
                 linkDest.textContent = translations[currentLang].modal_no_link;
@@ -298,6 +304,13 @@
                 linkDest.classList.remove('opacity-50', 'cursor-not-allowed');
             }
             
+            setTimeout(() => {
+                imageDest.src = projectImage;
+                imageDest.onload = () => {
+                    imageDest.classList.remove('opacity-0');
+                    imageDest.classList.add('opacity-100');
+                };
+            }, 50);
             imageDest.src = projectImage;
 
             modalWrapper.classList.remove('opacity-0', 'pointer-events-none');
