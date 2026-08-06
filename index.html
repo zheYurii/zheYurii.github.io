@@ -10,6 +10,7 @@
             theme: {
                 extend: {
                     colors: {
+                        lightTeto: '#ff6aad',
                         teto: '#ff2a6d',
                         tetoHover: '#d11a52',
                         darkbg: '#0f0a0c',
@@ -39,7 +40,7 @@
     <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         
         <h1 class="text-2xl font-bold text-teto tracking-widest flex items-start w-full md:w-auto justify-center md:justify-start">
-            > zheyurii
+            > zheYurii
             <span class="text-[10px] ml-1 text-teto/70 mt-1">[0401]</span>
             <span class="animate-pulse">_</span>
         </h1>
@@ -60,13 +61,22 @@
     <main class="flex-grow max-w-5xl mx-auto p-6 w-full">
         <section id="about" class="py-12 md:py-20">
             <p class="text-teto mb-2">root@zheyurii:~$ whoami</p>
-            <h2 class="text-4xl font-bold text-white mb-6" data-i18n="about_title">Przyszły inżynier, hobbystyczny programista i twórca</h2>
-            <div class="space-y-6 text-lg text-gray-400 max-w-3xl leading-relaxed">
+            <h2 class="text-4xl font-bold text-white mb-6" data-i18n="about_title">Przyszły inżynier, programista i twórca</h2>
+            <div class="space-y-6 text-lg text-gray-300 max-w-3xl leading-relaxed">
                 <p data-i18n="about_p1">
-                    Aktualnie rozpoczynam trzeci rok studiów na Politechnice Śląskiej. W świecie IT najbardziej kręci mnie to, co namacalne i praktyczne. Zamiast samej teorii, wolę postawić własny serwer, zarządzać siecią albo napisać narzędzie, które faktycznie do czegoś się przyda (jak choćby planer dla studentów o którym więcej niżej :3).
+                    Aktualnie rozpoczynam trzeci rok studiów informatycznych na Wydziale Matematyki Stosowanej Politechniki Śląskiej ze specjalizacją Bezpieczeństwo Systemów i Aplikacji Sieciowych.
                 </p>
                 <p data-i18n="about_p2">
-                    A gdy odchodzę od komputera? Dalej lubię, jak coś się dzieje. Dłubię przy autach, uczę się japońskiego, bawię się drukiem 3D, tworzę muzykę Vocaloid i angażuję się w społeczność cosplayową. Krótko mówiąc: zawsze mam w toku jakiś projekt, a efekty tego mojego ciągłego "kombinowania" możesz zobaczyć poniżej.
+                    W świecie IT najbardziej interesuje mnie to, co namacalne i praktyczne. Zamiast suchej teorii, wolę postawić własny serwer, zarządzać siecią albo napisać narzędzie, które faktycznie do czegoś się przyda (jak choćby planer dla studentów o którym więcej niżej :3). Jednak najbardziej ciągnie mnie do tworzenia krytycznych systemów wbudowanych i ich zabezpieczania.
+                </p>
+                <p data-i18n="about_p3">
+                    A poza komputerem? Nadal lubię być czymś zajęty. Dłubię przy autach, uczę się japońskiego, bawię się drukiem 3D, tworzę muzykę Vocaloid i angażuję się w społeczność cosplayową.
+                </p>
+                <p data-i18n="about_p4">
+                    Krótko mówiąc: zawsze mam w toku jakiś projekt, a efekty tego mojego ciągłego "kombinowania" możesz zobaczyć poniżej.
+                </p>
+                <p data-i18n="about_p5">
+                    Jeżeli zainteresowałem Cię swoją osobą lub po prostu chcesz pogadać, to zapraszam do kontaktu w sekcji <a href="#contact" class="text-lightTeto hover:text-teto transition-colors whitespace-nowrap">Kontakt</a> :3
                 </p>
             </div>
         </section>
@@ -89,7 +99,7 @@
                         <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">3D Printing</span>
                         <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">Hardware</span>
                     </div>
-                    <p class="text-sm text-gray-400" data-i18n="portal_short">Portal Gun realnej wielkości, posiadający oświetlenie i wydający dźwięki. Stworzony z myślą o cosplayu na prezent.</p>
+                    <p class="text-sm text-gray-300" data-i18n="portal_short">Portal Gun realnej wielkości, posiadający oświetlenie i wydający dźwięki. Stworzony z myślą o cosplayu na prezent.</p>
                 </div>
 
                 <div onclick="openModal(this)"
@@ -103,7 +113,7 @@
                         <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">IoT</span>
                         <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">Python</span>
                     </div>
-                    <p class="text-sm text-gray-400" data-i18n="solar_short">
+                    <p class="text-sm text-gray-300" data-i18n="solar_short">
                         Urządzenie z ekranem E-Papier wyświetlające dane o stanie instalacji fotowoltaicznej.
                     </p>
                 </div>
@@ -119,7 +129,7 @@
                         <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">WPF</span>
                         <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">C#</span>
                     </div>
-                    <p class="text-sm text-gray-400" data-i18n="led_ddp_short">
+                    <p class="text-sm text-gray-300" data-i18n="led_ddp_short">
                         Aplikacja do sterowania diodami LED z wykorzystaniem protokołu DDP na podstawie aktywnego źródła dźwięku.
                     </p>
                 </div>
@@ -144,7 +154,7 @@
                         <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">C++</span>
                         <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">Gaming</span>
                     </div>
-                    <p class="text-sm text-gray-400" data-i18n="bingo_short">
+                    <p class="text-sm text-gray-300" data-i18n="bingo_short">
                         Gra konsolowa losuje liczby zgodnie z zasadami Bingo, generuje karty dla graczy oraz sprawdza wyniki.
                     </p>
                 </div>
@@ -161,7 +171,7 @@
                         <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">QML</span>
                         <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">Mobile</span>
                     </div>
-                    <p class="text-sm text-gray-400" data-i18n="weneedtocook_short">
+                    <p class="text-sm text-gray-300" data-i18n="weneedtocook_short">
                         Mobilna aplikacja do zarządzania domową lodówką, przepisami kulinarnymi oraz listą zakupów.
                     </p>
                 </div>
@@ -178,7 +188,7 @@
                         <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">Java</span>
                         <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">Minecraft</span>
                     </div>
-                    <p class="text-sm text-gray-400" data-i18n="sealparadise_short">
+                    <p class="text-sm text-gray-300" data-i18n="sealparadise_short">
                         Modyfikacja do gry Minecraft dodająca 4 foki i foczy wymiar. Napisana za pomocą modloadera Fabric.
                     </p>
                 </div>
@@ -195,7 +205,7 @@
                         <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">PHP</span>
                         <span class="text-xs bg-[#241319] text-teto/80 border border-teto/20 px-2 py-1 rounded">Web</span>
                     </div>
-                    <p class="text-sm text-gray-400" data-i18n="kasannik_short">
+                    <p class="text-sm text-gray-300" data-i18n="kasannik_short">
                         Kompleksowa aplikacja webowa dla studentów do organizacji zajęć i planowania nauki.
                     </p>
                 </div>
@@ -217,7 +227,7 @@
         <div id="modal-content" class="relative z-10 bg-panelbg border border-teto w-full max-w-4xl p-6 rounded shadow-[0_0_30px_rgba(255,42,109,0.15)] transform scale-95 transition-transform duration-300 flex flex-col max-h-[90vh]">
             <div class="flex justify-between items-center mb-4 border-b border-tetoBorder pb-3 shrink-0">
                 <h3 id="modal-title" class="text-2xl font-bold text-teto">Szczegóły Projektu</h3>
-                <button onclick="closeModal()" class="text-gray-400 hover:text-teto font-bold text-3xl transition-colors leading-none">
+                <button onclick="closeModal()" class="text-gray-300 hover:text-teto font-bold text-3xl transition-colors leading-none">
                     &times;
                 </button>
             </div>
@@ -328,9 +338,12 @@
             nav_about: "[ O mnie ]",
             nav_projects: "[ Projekty ]",
             nav_contact: "[ Kontakt ]",
-            about_title: "Przyszły inżynier, hobbystyczny programista i twórca",
-            about_p1: "Aktualnie rozpoczynam trzeci rok studiów na Politechnice Śląskiej. W świecie IT najbardziej ciekawi mnie to, co namacalne i praktyczne. Zamiast samej teorii, wolę postawić własny serwer, zarządzać siecią albo napisać narzędzie, które faktycznie do czegoś się przyda (jak choćby planer dla studentów o którym więcej niżej :3).",
-            about_p2: `A gdy odchodzę od komputera? Dalej lubię, jak coś się dzieje. Dłubię przy autach, uczę się japońskiego, bawię się drukiem 3D, tworzę muzykę Vocaloid i angażuję się w społeczność cosplayową. Krótko mówiąc: zawsze mam w toku jakiś projekt, a efekty tego mojego ciągłego "kombinowania" możesz zobaczyć poniżej.`,
+            about_title: "Przyszły inżynier, programista i twórca",
+            about_p1: "Aktualnie rozpoczynam <b>trzeci rok studiów informatycznych na Wydziale Matematyki Stosowanej Politechniki Śląskiej</b> ze specjalizacją <b>Bezpieczeństwo Systemów i Aplikacji Sieciowych.</b>",
+            about_p2: `W świecie IT najbardziej interesuje mnie to, co <b>namacalne i praktyczne.</b> Zamiast suchej teorii, wolę postawić własny serwer, zarządzać siecią albo napisać narzędzie, które faktycznie do czegoś się przyda <i>(jak choćby planer dla studentów o którym więcej niżej :3)</i>. Jednak najbardziej ciągnie mnie do <b>tworzenia krytycznych systemów wbudowanych i ich zabezpieczania.</b>`,
+            about_p3:"A poza komputerem? Nadal lubię być czymś zajęty. Dłubię przy autach, uczę się japońskiego, bawię się drukiem 3D, tworzę muzykę Vocaloid i angażuję się w społeczność cosplayową.",
+            about_p4:`Krótko mówiąc: <b>zawsze mam w toku jakiś projekt</b>, a efekty tego mojego ciągłego <i>"kombinowania"</i> możesz zobaczyć poniżej.`,
+            about_p5:`Jeżeli zainteresowałem Cię swoją osobą lub po prostu chcesz pogadać, to zapraszam do kontaktu w sekcji <a href="#contact" class="text-lightTeto hover:text-teto transition-colors whitespace-nowrap">Kontakt</a> :3`,
             portal_name: "Portal Gun",
             portal_short: "Portal Gun realnej wielkości, posiadający oświetlenie i wydający dźwięki. Stworzony z myślą o cosplayu na prezent.",
             portal_title: "Portal Gun - Projekt łączący hardware i druk 3d.",
@@ -341,7 +354,7 @@
                             W środku całością zarządza mikrokontroler Arduino Nano, który steruje diodami LED WS2812B i reaguje na przyciski. Dźwiękiem zarządza Adafruit Audio FX Mini Sound Board. Całość jest zasilana z standardowego powerbanka. Dodatkowo w projekcie zastosowano wzmacniacz audio PAM8403, który pozwala na odtwarzanie dźwięków z głośnika 3W.
                             <br><br>
                             Obudowa została wydrukowana na drukarce 3D z filamentów PLA. W projekcie równie zastosowano przezroczyste akrylowe elementy, które odwzierciedlają realny wygląd Portal Gun'a. Całość jest złożona w taki sposób, aby można było łatwo ładować powerbanka i modyfikować projekt w przyszłości.
-                            <p class='text-gray-400 text-sm mt-2'>Projekt powstał w 2025 roku i był prezentowany na konwencie Pyrkon 2026.</p>
+                            <p class='text-gray-300 text-sm mt-2'>Projekt powstał w 2025 roku i był prezentowany na konwencie Pyrkon 2026.</p>
                             `,
             solar_name: "SolarDash",
             solar_short: "Urządzenie z ekranem E-Papier wyświetlające dane o stanie instalacji fotowoltaicznej.",
@@ -375,7 +388,7 @@
                      Od strony technicznej projekt został zaimplementowany przy użyciu dwóch głównych technologii: język C++ odpowiada za obsługę logiki biznesowej, pełną synchronizację danych oraz ich bezpieczny zapis do pliku, natomiast nowoczesny interfejs użytkownika zbudowano z wykorzystaniem języka QML. W aplikacji wdrożono również system walidacji danych wejściowych, który uniemożliwia wprowadzenie niepożądanych komend lub kodu poprzez nazwy produktów.
                      <br><br>
                      Główną siłą narzędzia jest pełna automatyzacja i współpraca trzech podstawowych modułów, które wyręczają użytkownika w planowaniu posiłków:
-                     <ul class='list-disc pl-5 mt-2 space-y-2 text-gray-400'>
+                     <ul class='list-disc pl-5 mt-2 space-y-2 text-gray-300'>
                         <li><strong class='text-gray-300'>Zarządzanie zapasami:</strong> Użytkownik ma ciągły podgląd na zawartość lodówki oraz listę zakupów, z której naciśnięcie jednego przycisku automatycznie przenosi kupione produkty bezpośrednio na stan lodówki.</li>
                         <li><strong class='text-gray-300'>Baza przepisów:</strong> Możliwość tworzenia własnych receptur z precyzyjnym podziałem na składniki, uwzględniającym ich ilość oraz jednostki miary (g, ml, sztuki).</li>
                         <li><strong class='text-gray-300'>Inteligentne gotowanie:</strong> Funkcja 'Use ingredients' automatycznie odejmuje zużyte podczas gotowania składniki ze stanu lodówki. Z kolei w przypadku braków, funkcja 'Add missing' błyskawicznie uzupełnia listę zakupów o niezbędne pozycje.</li>
@@ -394,7 +407,7 @@
             kasannik_desc: `Kasannik to system webowy dedykowany studentom, służący do integracji rozproszonych informacji akademickich (plan zajęć, terminy zaliczeń, baza kontaktowa prowadzących oraz listy zadań). Głównym celem było stworzenie czytelnego dashboardu, który na podstawie bieżącej daty automatycznie kategoryzuje priorytety użytkownika i odciąża go z pamiętania o deadlinach.
                      <br><br>
                      Technologie i podejście inżynierskie:
-                     <ul class='list-disc pl-5 mt-2 space-y-2 text-gray-400'>
+                     <ul class='list-disc pl-5 mt-2 space-y-2 text-gray-300'>
                         <li><strong class='text-gray-300'>Architektura:</strong> Własna implementacja wzorca MVC (Model-View-Controller) oraz autorski router obsługujący dynamiczne parametry w URL (np. ID semestru).</li>
                         <li><strong class='text-gray-300'>Backend:</strong> PHP 8.5 + MariaDB. Komunikacja z bazą oparta o obiekt PDO i sparametryzowane zapytania (zabezpieczenie przed SQL Injection).</li>
                         <li><strong class='text-gray-300'>Frontend:</strong> Czysty interfejs (UI) zbudowany bez ciężkich frameworków – wyłącznie HTML5, CSS i responsywny Vanilla JavaScript.</li>
@@ -416,9 +429,12 @@
         nav_about: "[ About ]",
         nav_projects: "[ Projects ]",
         nav_contact: "[ Contact ]",
-        about_title: "Future engineer, hobbyist programmer and creator",
-        about_p1: "I am currently starting my third year of studies at the Silesian University of Technology. In the IT world, I am most fascinated by what is tangible and practical. Instead of focusing solely on theory, I prefer to deploy my own server, manage a network, or develop a tool that actually solves a real problem (like the student planner detailed below :3).",
-        about_p2: `And when I step away from the keyboard? I still like to keep things moving. I tinker with cars, learn Japanese, experiment with 3D printing, produce Vocaloid music, and engage in the cosplay community. In short: I always have a project going on, and you can see the results of my constant "tinkering" down below.`,
+        about_title: "Future engineer, developer, and creator",
+        about_p1: "I am currently starting my <b>third year of Computer Science at the Faculty of Applied Mathematics at the Silesian University of Technology</b>, specializing in <b>System and Network Application Security.</b>",
+        about_p2: `In the IT world, I'm all about what's <b>hands-on and practical.</b> Instead of dry theory, I prefer to set up my own server, manage a network, or build a tool that actually solves a problem <i>(like the student planner you'll find below :3)</i>. Ultimately, my biggest drive is <b>building and securing critical embedded systems.</b>`,
+        about_p3: "And away from the keyboard? I still like to keep busy. I tinker with cars, study Japanese, play around with 3D printing, produce Vocaloid music, and stay active in the cosplay community.",
+        about_p4: `Long story short: <b>I always have a project on the go</b>, and you can see the results of my constant <i>"tinkering"</i> down below.`,
+        about_p5: `If my profile caught your eye, or if you just want to chat, feel free to reach out in the <a href="#contact" class="text-lightTeto hover:text-teto transition-colors whitespace-nowrap">Contact</a> section :3`,
         
         portal_name: "Portal Gun",
         portal_short: "A life-size Portal Gun featuring lighting and sound effects. Created as a cosplay gift.",
@@ -430,7 +446,7 @@
                         At its core, the device is controlled by an Arduino Nano microcontroller, which manages WS2812B LED strips and processes button inputs. Audio playback is handled by an Adafruit Audio FX Mini Sound Board. The entire system is powered by a standard power bank. Additionally, a PAM8403 audio amplifier was integrated to drive a 3W speaker for clear and loud sound effects.
                         <br><br>
                         The casing was 3D printed using PLA filament. The build also incorporates transparent acrylic elements to accurately reflect the real in-game look of the Portal Gun. The entire structure was engineered in a way that allows for easy power bank recharging and future hardware modifications.
-                        <p class='text-gray-400 text-sm mt-2'>The project was built in 2025 and showcased at the Pyrkon 2026 convention.</p>
+                        <p class='text-gray-300 text-sm mt-2'>The project was built in 2025 and showcased at the Pyrkon 2026 convention.</p>
                         `,
                         
         solar_name: "SolarDash",
@@ -468,7 +484,7 @@
                  From a technical perspective, the project was implemented using two main technologies: C++ handles the business logic, full data synchronization, and secure file storage, while the modern user interface was built using QML. The application also features an input validation system that prevents the injection of malicious commands or code through product names.
                  <br><br>
                  The main strength of the tool is the full automation and synergy of three core modules that assist the user in meal planning:
-                 <ul class='list-disc pl-5 mt-2 space-y-2 text-gray-400'>
+                 <ul class='list-disc pl-5 mt-2 space-y-2 text-gray-300'>
                     <li><strong class='text-gray-300'>Inventory Management:</strong> The user has a continuous overview of the fridge contents and the shopping list. With a single button press, purchased items are automatically transferred directly to the fridge inventory.</li>
                     <li><strong class='text-gray-300'>Recipe Database:</strong> The ability to create custom recipes with a precise breakdown of ingredients, including quantities and units of measurement (g, ml, pieces).</li>
                     <li><strong class='text-gray-300'>Smart Cooking:</strong> The 'Use ingredients' function automatically deducts the ingredients used during cooking from the fridge inventory. In case of shortages, the 'Add missing' feature instantly populates the shopping list with the required items.</li>
@@ -489,7 +505,7 @@
         kasannik_desc: `Kasannik is a web-based system dedicated to students, designed to integrate scattered academic information (class schedules, exam deadlines, lecturer contact databases, and task lists). The primary goal was to create a clean dashboard that automatically categorizes user priorities based on the current date, relieving them of the mental load of remembering deadlines.
                  <br><br>
                  Technologies and engineering approach:
-                 <ul class='list-disc pl-5 mt-2 space-y-2 text-gray-400'>
+                 <ul class='list-disc pl-5 mt-2 space-y-2 text-gray-300'>
                     <li><strong class='text-gray-300'>Architecture:</strong> A custom implementation of the MVC (Model-View-Controller) pattern and an in-house router supporting dynamic URL parameters (e.g., semester ID).</li>
                     <li><strong class='text-gray-300'>Backend:</strong> PHP 8.5 + MariaDB. Database communication is based on the PDO object and parameterized queries (securing the app against SQL Injection).</li>
                     <li><strong class='text-gray-300'>Frontend:</strong> A clean UI built without heavy frameworks – strictly HTML5, CSS, and responsive Vanilla JavaScript.</li>
