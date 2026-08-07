@@ -296,6 +296,9 @@
         const scrollFade = document.getElementById('scroll-fade');
 
         function openModal(selectedProject) {
+            imageDest.classList.remove('opacity-100');
+            imageDest.classList.add('opacity-0');
+
             const projectTitle = selectedProject.getAttribute('data-title');
             const projectDesc = selectedProject.getAttribute('data-desc');
             const projectLink = selectedProject.getAttribute('data-link');
@@ -303,9 +306,6 @@
 
             titleDest.textContent = projectTitle;
             descDest.innerHTML = projectDesc;
-
-            imageDest.classList.remove('opacity-100');
-            imageDest.classList.add('opacity-0');
 
             imageDest.src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 
