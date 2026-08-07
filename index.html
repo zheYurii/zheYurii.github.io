@@ -350,6 +350,9 @@
             
             modalWindow.classList.remove('scale-100');
             modalWindow.classList.add('scale-95');
+
+            imageDest.classList.remove('opacity-100');
+            imageDest.classList.add('opacity-0');
         }
         function checkScroll() {
             if (modalScrollArea.scrollTop + modalScrollArea.clientHeight >= modalScrollArea.scrollHeight - 5) {
